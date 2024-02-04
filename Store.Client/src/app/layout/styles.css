@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply font-serif;
+}
+.catalog-product-container {
+  @apply flex gap-2;
+}
+.img-icon {
+  @apply w-6 h-6 rounded-full;
+}
+.btn-primary {
+  @apply bg-blue-200 m-2 p-[6px] rounded-lg hover:bg-blue-300 transition-all ease-in duration-500;
+}

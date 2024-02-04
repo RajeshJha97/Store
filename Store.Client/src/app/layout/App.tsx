@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { Product } from "../models/product"
+import Catalog from "../../feature/catalog/Catalog"
 
 function App() {
   const url = "https://localhost:5000/api/Product"
@@ -27,21 +28,8 @@ function App() {
   }
   return (
     <>
-      <h1 className="text-red-500 font-serif">Digital store</h1>
-      <ul>
-        {products.map((product) => {
-          return (
-            <li key={product.id}>
-              {product.name}-- ${product.price}
-            </li>
-          )
-        })}
-      </ul>
-      <button
-        className="bg-blue-300 rounded-sm m-2 p-1"
-        onClick={handleAddProduct}>
-        Add_Product
-      </button>
+      <h1 className="font-semibold text-4xl font-serif ">Digital store</h1>
+      <Catalog products={products} handleAddProduct={handleAddProduct} />
     </>
   )
 }
