@@ -13,41 +13,38 @@ export default function ProductCard(props: Props) {
   const { product } = props
   return (
     <section className="product-card-container">
-      <span className="relative ">
-        <h1 className="absolute left-2 text-4xl text-gray-600 bg-gray-200 rounded-full p-0.5 m-1">
+      {/* Header section */}
+      <section className="flex w-full justify-between pl-4 pr-4 mt-2 mb-2">
+        <h1 className="bg-gray-300 rounded-full h-6 w-6 text-center">
           {product.description.charAt(0).toUpperCase()}
         </h1>
-        <img
-          src={product.pictureUrl}
-          alt="image"
-          className="mb-2 ml-5 w-[80%]  h-48  rounded-md"
-        />
-      </span>
-
-      {readMore ? (
-        <p className="m-2 font-roboto">
-          {product.description}
-          <span
-            className="text-blue-500 hover:text-blue-600 duration-300 ml-1"
-            onClick={handleReadmore}>
-            ...Read Less
-          </span>
-        </p>
-      ) : (
-        <p className="m-2 font-roboto">
-          {product.description.substring(0, para_Length)}
-          <span
-            className="text-blue-500 hover:text-blue-600 duration-300 ml-1"
-            onClick={handleReadmore}>
-            ...Read More
-          </span>
-        </p>
-      )}
-      <section className="m-2 flex justify-between">
-        <h1 className="font-roboto font-semibold">{product.name}</h1>
-        <h1 className="font-roboto font-semibold text-gray-700">
-          {product.price}
+        <h2 className="text-purple-700 font-roboto text-lg ">{product.name}</h2>
+      </section>
+      {/* image section */}
+      <img
+        src={product.pictureUrl}
+        alt={product.name}
+        className="h-48 w-48 mb-1"
+      />
+      {/* Price- tag section */}
+      <section className="flex flex-col w-full  pl-4 pr-4 mb-1">
+        <h1 className="text-purple-600 text-lg">₹{product.price}</h1>
+        <h1 className="text-gray-500">
+          {product.brand} / {product.type}
         </h1>
+      </section>
+      {/* Button Section */}
+      <section className="flex w-full justify-around mb-2 text-blue-500 mt-2">
+        <a
+          href="#"
+          className="hover:text-blue-700 transition-all ease-in duration-300">
+          ADD TO CART
+        </a>
+        <a
+          href="#"
+          className="hover:text-blue-700 transition-all ease-in duration-300">
+          VIEW
+        </a>
       </section>
     </section>
   )
