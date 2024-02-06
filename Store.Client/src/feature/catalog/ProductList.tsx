@@ -8,12 +8,10 @@ interface Props {
 export default function ProductList(props: Props) {
   const { products } = props
   return (
-    <>
-      <ul className="ml-2 mb-1">
-        {products.map((product) => {
-          return <ProductCard key={product.id} product={product} />
-        })}
-      </ul>
-    </>
+    <section className="product-list-container">
+      {products.map((product) => {
+        return <ProductCard key={product.id} product={product} />
+      })}
+    </section>
   )
 }

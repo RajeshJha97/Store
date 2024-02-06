@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { Product } from "../models/product"
 import Catalog from "../../feature/catalog/Catalog"
+import Header from "./Header"
 
 function App() {
   const url = "https://localhost:5000/api/Product"
@@ -21,14 +22,14 @@ function App() {
         description: "Lorem ipsum dolor sit amet.",
         price: prevState.length * 56 + 100.25,
         brand: "random brand",
-        pictureUrl: "http://picsum/.photos/200",
+        pictureUrl: "http://picsum/photos/200",
         quantityInStock: 5,
       },
     ])
   }
   return (
     <>
-      <h1 className="font-semibold text-4xl font-serif ">Digital store</h1>
+      <Header />
       <Catalog products={products} handleAddProduct={handleAddProduct} />
     </>
   )
