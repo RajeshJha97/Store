@@ -1,38 +1,36 @@
-import { useState, useEffect } from "react"
-import { Product } from "../models/product"
-import Catalog from "../../feature/catalog/Catalog"
-import Header from "./Header"
+import { useEffect, useState } from 'react';
+import { Product } from '../models/product';
+import Catalog from '../../features/catalog/Catalog';
+import Header from './Header';
 
 function App() {
-  const url = "https://localhost:5000/api/Product"
-
-  const [products, setProducts] = useState<Product[]>([])
+  const [products, setProducts] = useState<Product[]>([]);
+  const url = 'https://localhost:5000/api/Product';
   useEffect(() => {
     fetch(url)
-      .then((resp) => resp.json())
-      .then((data) => setProducts(data))
-  }, [])
+      .then((response) => response.json())
+      .then((data) => setProducts(data));
+  }, []);
 
   const handleAddProduct = () => {
     setProducts((prevState) => [
       ...prevState,
       {
-        id: crypto.randomUUID(),
-        name: `Product-${prevState.length + 1}`,
-        description: "Lorem ipsum dolor sit amet.",
-        price: prevState.length * 56 + 100.25,
-        brand: "random brand",
-        pictureUrl: "http://picsum/photos/200",
-        quantityInStock: 5,
+        name: 'Product' + (prevState.length + 1),
+        price: prevState.length * 100 + 100.25,
+        description: 'Some Product',
+        brand: 'Some brand',
+        type: 'Some type',
+        pictureUrl: 'http://picsum.photos/200',
       },
-    ])
-  }
+    ]);
+  };
   return (
     <>
       <Header />
       <Catalog products={products} handleAddProduct={handleAddProduct} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -17,7 +17,8 @@ namespace Store.Server.API.Controllers
             _logger = logger;
         }
 
-        [HttpGet]        
+        [HttpGet]
+        [ResponseCache(Duration =30)]
         public async Task<ActionResult<List<Product>>> GetProducts()
         {
             try

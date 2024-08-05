@@ -1,18 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply font-poppins;
+* {
+  box-sizing: border-box;
+  padding: 0;
 }
 
-.btn-primary {
-  @apply bg-blue-200 m-2 p-[6px] rounded-lg hover:bg-blue-300 transition-all ease-in duration-500;
-}
-.product-list-container {
-  @apply flex flex-wrap w-full lg:max-w-[80%] md:max-w-[70%]  justify-center items-center rounded-xl gap-4 mt-4 ml-8 mr-8;
-}
-.product-card-container {
-  @apply flex flex-col justify-center items-center max-w-[90%] w-[70%] md:w-[70%] overflow-hidden bg-gray-100 md:max-w-[48%] lg:max-w-[23%] rounded-lg shadow-xl cursor-pointer hover:bg-gray-200 transition-all ease-in duration-300;
+h1 {
+  @apply font-bold text-xl;
 }
