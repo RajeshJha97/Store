@@ -16,16 +16,19 @@ export default function Header() {
       <NavLink to='/' className='ml-4 font-poppins text-lg'>
         React-Store
       </NavLink>
+      {/* middle items */}
       <section className='flex gap-4 md:gap-8'>
         {midLinks.map((midLink) => {
           const { title, path } = midLink;
           return <NavLink to={path}>{title.toUpperCase()}</NavLink>;
         })}
+        {/* cart */}
         <section className='flex justify-center items-center text-lg  relative gap-1'>
           <FiShoppingCart />
           <span className='text-purple-400 font-roboto'>4</span>
         </section>
       </section>
+      {/* right side */}
       <section className='flex gap-4 mr-4 md:gap-8'>
         {rightLinks.map((rightLink) => {
           const { title, path } = rightLink;
