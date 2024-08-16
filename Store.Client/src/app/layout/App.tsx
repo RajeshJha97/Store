@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-import { Product } from '../models/product';
 import Header from './Header';
 import { Outlet } from 'react-router-dom';
 

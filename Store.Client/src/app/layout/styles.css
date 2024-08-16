@@ -10,3 +10,7 @@
 h1 {
   @apply font-bold text-xl;
 }
+
+.table-tr {
+  @apply font-poppins hover:bg-slate-50 duration-200 cursor-grab;
+}

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Product } from '../../app/models/product';
 
 interface Props {
@@ -38,9 +39,12 @@ export default function ProductCard(props: Props) {
           <a href='' className='text-blue-500 hover:text-blue-700 duration-300'>
             Add To Cart
           </a>
-          <a href='' className='text-blue-500 hover:text-blue-700 duration-300'>
+          <Link
+            to={`/catalog/${product.id}`}
+            className='text-blue-500 hover:text-blue-700 duration-300'
+          >
             View
-          </a>
+          </Link>
         </section>
       </section>
     </main>
